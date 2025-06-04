@@ -1,0 +1,127 @@
+/* ===========================
+   Importação de fontes
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Sora:wght@700&display=swap');
+
+/* ===========================
+   Reset básico
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   Paleta de Cores
+   =========================== */
+:root {
+  /* Tema Escuro */
+  --background-color: #080202;
+  --text-color: #d1d1d1;
+  --accent-color: #e83d4e;
+  --separator-color: #ffffff2b;
+
+  /* Tema Claro */
+  --background-color-light: #f8f8f8;
+  --text-color-light: #1a1a1a;
+  --accent-color-light: #e83d4e;
+  --separator-color-light: #00000020;
+
+  /* Espaçamento padrão */
+  --padding-page: 1.5rem;
+}
+
+/* ===========================
+   Configurações Globais
+   =========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: var(--padding-page);
+}
+
+/* ===========================
+   Tipografia
+   =========================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sora', sans-serif;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* ===========================
+   Outros elementos
+   =========================== */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--separator-color);
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding-page);
+}
+
+/* ===========================
+   Responsividade
+   =========================== */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* ===========================
+   Futuro: Alternância de Tema
+   =========================== */
+/* A lógica JS vem depois */
+.light-theme {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.light-theme h1, .light-theme h2, .light-theme h3,
+.light-theme h4, .light-theme h5, .light-theme h6 {
+  color: var(--text-color-light);
+}
+
+.light-theme a {
+  color: var(--accent-color-light);
+}
+
+.light-theme hr {
+  background-color: var(--separator-color-light);
+}
