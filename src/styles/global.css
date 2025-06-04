@@ -140,7 +140,7 @@ hr {
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Mantém logo à esquerda e menu à direita */
 }
 
 .logo {
@@ -159,6 +159,9 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 24px;
+  justify-content: flex-end; /* Alinha o menu à direita */
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -179,21 +182,24 @@ nav a:hover {
 .footer {
   background-color: #080202;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 24px;
+  padding: 16px;
   text-align: center;
 }
 
 .footer p {
   color: #d1d1d1;
-  margin: 4px 0;
+  margin: 2px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; /* Fonte menor */
+  line-height: 1.4; /* Espaçamento mais compacto */
 }
 
 .footer a {
   color: #e83d4e;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
-
