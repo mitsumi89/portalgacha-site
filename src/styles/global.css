@@ -16,17 +16,19 @@
    Paleta de Cores
    =========================== */
 :root {
-  /* Tema Escuro */
-  --background-color: #080202;
+:root {
+  --bg-color: #080202;
   --text-color: #d1d1d1;
-  --accent-color: #e83d4e;
-  --separator-color: #ffffff2b;
+  --highlight: #e83d4e;
+  --separator: #ffffff2b;
+}
 
-  /* Tema Claro */
-  --background-color-light: #f8f8f8;
-  --text-color-light: #1a1a1a;
-  --accent-color-light: #e83d4e;
-  --separator-color-light: #00000020;
+.dark {
+  --bg-color: #dcdcdc;
+  --text-color: #1a1a1a;
+  --highlight: #e83d4e;
+  --separator: #1a1a1a30;
+}
 
   /* Espaçamento padrão */
   --padding-page: 1.5rem;
@@ -42,7 +44,7 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 200;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
   padding: var(--padding-page);
@@ -218,7 +220,9 @@ header {
 /* Navegação */
 .header-nav {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
 }
 
 .header-nav a {
@@ -264,8 +268,28 @@ header {
 }
 
 /* ===========================
-   Logo
+   Botão de Alternância de Tema
    =========================== */
 
+/* Botão de tema */
+.theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #d1d1d1;
+  transition: transform 0.3s ease;
+}
+
+.theme-button:hover svg {
+  transform: rotate(40deg);
+}
 
 
