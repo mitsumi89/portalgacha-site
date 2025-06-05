@@ -11,29 +11,30 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="/global.css">
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('search-toggle');
+    const container = document.querySelector('.search-container');
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      container.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!container.contains(e.target)) {
+        container.classList.remove('active');
+      }
+    });
+   });
+    </script>
+
   </head>
 
   <body>
     
     <Header />
-      <script>
-  const toggle = document.getElementById('search-toggle');
-  const container = document.querySelector('.search-container');
-
-  if (toggle) {
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (container) {
-        container.classList.toggle('active');
-      }
-    });
-  }
-
-  document.addEventListener('click', (e) => {
-    if (container && !container.contains(e.target as Node)) {
-      container.classList.remove('active');
-    }
-  });
 </script>
       <main>
         <slot />
