@@ -41,27 +41,31 @@ import Footer from '../components/Footer.astro';
       });
     }
   });
+</script>
 
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-icon');
     const html = document.documentElement;
 
     // Verifica tema salvo
-    if (localStorage.getItem('theme') === 'dark') {
-      html.classList.add('dark');
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.add('light');
+      setSun();
+    } else {
       setMoon();
     }
 
     toggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
+      html.classList.toggle('light');
 
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        setMoon();
-      } else {
+      if (html.classList.contains('light')) {
         localStorage.setItem('theme', 'light');
         setSun();
+      } else {
+        localStorage.setItem('theme', 'dark');
+        setMoon();
       }
     });
 
@@ -81,11 +85,12 @@ import Footer from '../components/Footer.astro';
 
     function setMoon() {
       icon.innerHTML = `
-        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010.02 9.79z"/>
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 0020.02 9.79z"/>
       `;
     }
   });
 </script>
+
 
   </body>
 </html>

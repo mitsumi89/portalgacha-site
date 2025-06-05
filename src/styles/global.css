@@ -1,11 +1,11 @@
 /* ===========================
-   Importação de fontes
-   =========================== */
+   Importação de Fontes
+=========================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Sora:wght@700&display=swap');
 
 /* ===========================
-   Reset básico
-   =========================== */
+   Reset
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +14,7 @@
 
 /* ===========================
    Paleta de Cores
-   =========================== */
-:root {
+=========================== */
 :root {
   --bg-color: #080202;
   --text-color: #d1d1d1;
@@ -23,40 +22,35 @@
   --separator: #ffffff2b;
 }
 
-.dark {
+html.light {
   --bg-color: #dcdcdc;
   --text-color: #1a1a1a;
   --highlight: #e83d4e;
   --separator: #1a1a1a30;
 }
 
-  /* Espaçamento padrão */
-  --padding-page: 1.5rem;
-}
-
 /* ===========================
-   Configurações Globais
-   =========================== */
+   Global
+=========================== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
   line-height: 1.6;
-  padding: var(--padding-page);
+  padding: 1.5rem;
 }
 
 /* ===========================
    Tipografia
-   =========================== */
+=========================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Sora', sans-serif;
   color: var(--text-color);
-  line-height: 1.2;
 }
 
 h1 { font-size: 2.5rem; }
@@ -68,13 +62,11 @@ h6 { font-size: 1rem; }
 
 p {
   margin-bottom: 1rem;
-  font-weight: 200;
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--highlight);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -82,116 +74,107 @@ a:hover {
 }
 
 /* ===========================
-   Outros elementos
-   =========================== */
-hr {
-  border: none;
-  height: 1px;
-  background-color: var(--separator-color);
-  margin: 2rem 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--padding-page);
-}
-
-/* ===========================
-   Responsividade
-   =========================== */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
-}
-
-/* ===========================
-   Futuro: Alternância de Tema
-   =========================== */
-/* A lógica JS vem depois */
-.light-theme {
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
-}
-
-.light-theme h1, .light-theme h2, .light-theme h3,
-.light-theme h4, .light-theme h5, .light-theme h6 {
-  color: var(--text-color-light);
-}
-
-.light-theme a {
-  color: var(--accent-color-light);
-}
-
-.light-theme hr {
-  background-color: var(--separator-color-light);
-}
-
-/* --------------------------
-   HEADER
--------------------------- */
+   Header
+=========================== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #080202;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   padding: 16px 32px;
-  border-bottom: 1px solid #ffffff2b;
+  border-bottom: 1px solid var(--separator);
 }
 
-/* Container: Logo + Nome */
+/* Logo + Nome */
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Logo */
 .logo img {
   height: 42px;
-  width: auto;
 }
 
-/* Nome do site */
 .site-name {
   display: flex;
   gap: 4px;
   font-size: 20px;
-  color: #ffffff;
 }
 
 .site-name .light {
-  font-family: 'Sora', sans-serif;
   font-weight: 200;
 }
 
 .site-name .bold {
-  font-family: 'Sora', sans-serif;
   font-weight: 800;
 }
 
-/* Barra de pesquisa */
+/* ===========================
+   Navegação
+=========================== */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
+.header-nav a {
+  text-transform: uppercase;
+  font-weight: 200;
+  transition: color 0.3s;
+}
+
+.header-nav a:hover {
+  color: var(--highlight);
+}
+
+/* ===========================
+   Ações do Header (Busca + Tema)
+=========================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botões (Tema e Busca) */
+.search-button,
+.theme-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  line-height: 0;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 6px;
+}
+
+.search-button svg,
+.theme-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-color);
+  transition: stroke 0.3s;
+}
+
+.search-button:hover svg,
+.theme-button:hover svg {
+  stroke: var(--highlight);
+}
+
+/* ===========================
+   Barra de Pesquisa
+=========================== */
 .search-container {
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  display: flex;
-  align-items: center;
-}
-
-.search-button img {
-  width: 20px;
-  height: 20px;
-  filter: invert(100%);
 }
 
 #search-input {
@@ -199,15 +182,14 @@ header {
   opacity: 0;
   border: none;
   outline: none;
-  background-color: #1a1a1a;
-  color: #d1d1d1;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--separator);
   border-radius: 8px;
   padding: 6px 12px;
-  border: 1px solid #ffffff2b;
   margin-left: 8px;
   pointer-events: none;
   transition: width 0.3s ease, opacity 0.3s ease;
-  font-family: 'Inter', sans-serif;
 }
 
 .search-container.active #search-input {
@@ -216,51 +198,23 @@ header {
   pointer-events: auto;
 }
 
-
-/* Navegação */
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-left: auto;
-}
-
-.header-nav a {
-  color: #d1d1d1;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
-  transition: color 0.3s;
-  text-transform: uppercase;
-}
-
-.header-nav a:hover {
-  color: #e83d4e;
-}
-
 /* ===========================
    Footer
-   =========================== */
-   
+=========================== */
 .footer {
-  background-color: #080202;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--separator);
   padding: 16px;
   text-align: center;
 }
 
 .footer p {
-  color: #d1d1d1;
-  margin: 2px 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px; /* Fonte menor */
-  line-height: 1.4; /* Espaçamento mais compacto */
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .footer a {
-  color: #e83d4e;
-  text-decoration: none;
-  font-size: 12px;
+  color: var(--highlight);
 }
 
 .footer a:hover {
@@ -268,28 +222,10 @@ header {
 }
 
 /* ===========================
-   Botão de Alternância de Tema
-   =========================== */
-
-/* Botão de tema */
-.theme-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  display: flex;
-  align-items: center;
+   Responsivo
+=========================== */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
 }
-
-.theme-button svg {
-  width: 20px;
-  height: 20px;
-  stroke: #d1d1d1;
-  transition: transform 0.3s ease;
-}
-
-.theme-button:hover svg {
-  transform: rotate(40deg);
-}
-
-
