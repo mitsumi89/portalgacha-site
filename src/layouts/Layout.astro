@@ -6,41 +6,39 @@ import Footer from '../components/Footer.astro';
 
 <html lang="pt-br">
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Sora:wght@200;800&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="/global.css">
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('search-toggle');
-    const container = document.querySelector('.search-container');
-
-    toggle?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      container?.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      const target = e.target as Node;
-      if (container && !container.contains(target)) {
-        container.classList.remove('active');
-        }
-      });
-     });
-    </script>
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Sora:wght@200;800&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    
     <Header />
-</script>
-      <main>
-        <slot />
-      </main>
+
+    <main>
+      <slot />
+    </main>
+
     <Footer />
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('search-toggle');
+        const container = document.querySelector('.search-container');
+
+        toggle?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          container?.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+          const target = e.target;
+          if (container && !container.contains(target)) {
+            container.classList.remove('active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
