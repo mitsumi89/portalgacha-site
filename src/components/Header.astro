@@ -1,12 +1,30 @@
 ---
 import "../styles/global.css";
 ---
+<header>
+  <div class="header-left">
+    <a href="/" class="logo">
+      <img src="/logo.svg" alt="PortalGacha logo" />
+    </a>
+    <div class="site-name">
+      <span class="light">Portal</span><span class="bold">Gacha</span>
+    </div>
+  </div>
 
-<nav>
-  <ul>
-    <li><a href="/">INÍCIO</a></li>
-    <li><a href="/jogos">JOGOS</a></li>
-    <li><a href="/apoie">APOIE</a></li>
-    <li><a href="/contato">CONTATO</a></li>
-  </ul>
-</nav>
+  <nav class="header-nav">
+    <a href="/">Início</a>
+    <a href="/jogos">Jogos</a>
+    <a href="/apoie">Apoie</a>
+    <a href="/contato">Contato</a>
+    <div class="search-container">
+  <button class="search-button" id="search-toggle">
+    <img src="/search.svg" alt="Ícone de busca" />
+  </button>
+  <input type="text" id="search-input" placeholder="Buscar...">
+  </div>
+
+  </nav>
+
+  
+
+</header>

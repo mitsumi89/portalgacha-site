@@ -126,52 +126,79 @@ hr {
   background-color: var(--separator-color-light);
 }
 
-/* ===========================
-   Header
-   =========================== */
-.header {
+/* --------------------------
+   HEADER
+-------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #080202;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 32px;
+  border-bottom: 1px solid #ffffff2b;
 }
 
-.header .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
+/* Container: Logo + Nome */
+.header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Mantém logo à esquerda e menu à direita */
+  gap: 12px;
 }
 
-.logo {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  color: #e83d4e;
+/* Logo */
+.logo img {
+  height: 42px;
+  width: auto;
 }
 
-.logo span {
-  font-weight: 900;
-  color: #d1d1d1;
-}
-
-nav ul {
-  list-style: none;
+/* Nome do site */
+.site-name {
   display: flex;
-  gap: 24px;
-  justify-content: flex-end; /* Alinha o menu à direita */
-  margin: 0;
-  padding: 0;
+  gap: 4px;
+  font-size: 20px;
+  color: #ffffff;
 }
 
-nav a {
+.site-name .light {
+  font-family: 'Sora', sans-serif;
+  font-weight: 200;
+}
+
+.site-name .bold {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+}
+
+.search-input {
+  background-color: #1a1a1a;
+  border: 1px solid #ffffff2b;
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: #d1d1d1;
+  font-family: 'Inter', sans-serif;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+
+/* Navegação */
+.header-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.header-nav a {
   color: #d1d1d1;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 200;
+  transition: color 0.3s;
+  text-transform: uppercase;
 }
 
-nav a:hover {
+.header-nav a:hover {
   color: #e83d4e;
 }
 
@@ -203,3 +230,10 @@ nav a:hover {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* ===========================
+   Logo
+   =========================== */
+
+
+
