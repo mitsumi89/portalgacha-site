@@ -17,18 +17,20 @@ import Footer from '../components/Footer.astro';
     const toggle = document.getElementById('search-toggle');
     const container = document.querySelector('.search-container');
 
-    toggle.addEventListener('click', (e) => {
+    toggle?.addEventListener('click', (e) => {
       e.stopPropagation();
-      container.classList.toggle('active');
+      container?.classList.toggle('active');
     });
 
     document.addEventListener('click', (e) => {
-      if (!container.contains(e.target)) {
+      const target = e.target as Node;
+      if (container && !container.contains(target)) {
         container.classList.remove('active');
-      }
-    });
-   });
+        }
+      });
+     });
     </script>
+
 
   </head>
 
